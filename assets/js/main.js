@@ -86,7 +86,7 @@
     // Language Toggle
     // ================================
     const langToggle = document.getElementById('langToggle');
-    let currentLang = 'sv'; // Default language
+    let currentLang = 'pt'; // Default language (Portuguese)
 
     // Get saved language preference
     const savedLang = localStorage.getItem('preferredLanguage');
@@ -97,35 +97,54 @@
 
     if (langToggle) {
         langToggle.addEventListener('click', function() {
-            currentLang = currentLang === 'sv' ? 'en' : 'sv';
+            // Cycle through PT -> SV -> EN -> PT
+            if (currentLang === 'pt') {
+                currentLang = 'sv';
+            } else if (currentLang === 'sv') {
+                currentLang = 'en';
+            } else {
+                currentLang = 'pt';
+            }
             setLanguage(currentLang);
             localStorage.setItem('preferredLanguage', currentLang);
         });
     }
 
     function setLanguage(lang) {
-        // Update all elements with data-lang-sv and data-lang-en
+        // Update all elements with data-lang attributes
+        const ptElements = document.querySelectorAll('[data-lang-pt]');
         const svElements = document.querySelectorAll('[data-lang-sv]');
         const enElements = document.querySelectorAll('[data-lang-en]');
 
-        if (lang === 'sv') {
+        // Hide all language elements first
+        ptElements.forEach(el => el.style.display = 'none');
+        svElements.forEach(el => el.style.display = 'none');
+        enElements.forEach(el => el.style.display = 'none');
+
+        // Show only the selected language
+        if (lang === 'pt') {
+            ptElements.forEach(el => el.style.display = '');
+        } else if (lang === 'sv') {
             svElements.forEach(el => el.style.display = '');
-            enElements.forEach(el => el.style.display = 'none');
-        } else {
-            svElements.forEach(el => el.style.display = 'none');
+        } else if (lang === 'en') {
             enElements.forEach(el => el.style.display = '');
         }
 
         // Update language toggle button
+        const ptSpans = langToggle?.querySelectorAll('[data-lang="pt"]');
         const svSpans = langToggle?.querySelectorAll('[data-lang="sv"]');
         const enSpans = langToggle?.querySelectorAll('[data-lang="en"]');
         
-        if (svSpans && enSpans) {
-            if (lang === 'sv') {
+        if (ptSpans && svSpans && enSpans) {
+            ptSpans.forEach(span => span.style.display = 'none');
+            svSpans.forEach(span => span.style.display = 'none');
+            enSpans.forEach(span => span.style.display = 'none');
+            
+            if (lang === 'pt') {
+                ptSpans.forEach(span => span.style.display = '');
+            } else if (lang === 'sv') {
                 svSpans.forEach(span => span.style.display = '');
-                enSpans.forEach(span => span.style.display = 'none');
-            } else {
-                svSpans.forEach(span => span.style.display = 'none');
+            } else if (lang === 'en') {
                 enSpans.forEach(span => span.style.display = '');
             }
         }
