@@ -713,7 +713,7 @@ p {
 
 .bio-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
     gap: 3rem;
     align-items: center;
 }
@@ -722,6 +722,14 @@ p {
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.bio-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .bio-content h2 {
