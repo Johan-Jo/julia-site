@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Julia Jonsson</title>
+    <meta name="description" content="Kontakta Julia Jonssons team för partnerskap, mediaförfrågningar eller allmänna frågor.">
+    <meta property="og:title" content="Kontakta Julia Jonsson">
+    <meta property="og:description" content="Ta kontakt för partnerskap och samarbeten">
+    <meta property="og:image" content="/assets/images/heroJulia.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/" class="logo">Julia Jonsson</a>
+                <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link" data-lang-sv="Hem" data-lang-en="Home">Hem</a></li>
+                <li><a href="/about" class="nav-link" data-lang-sv="Om Julia" data-lang-en="About">Om Julia</a></li>
+                <li><a href="/achievements" class="nav-link" data-lang-sv="Meriter" data-lang-en="Achievements">Meriter</a></li>
+                <li><a href="/partners" class="nav-link" data-lang-sv="Partnerskap" data-lang-en="Partners">Partnerskap</a></li>
+                <li><a href="/gallery" class="nav-link" data-lang-sv="Galleri" data-lang-en="Gallery">Galleri</a></li>
+                <li><a href="/contact" class="nav-link active" data-lang-sv="Kontakt" data-lang-en="Contact">Kontakt</a></li>
+                <li class="lang-toggle">
+                    <button id="langToggle" aria-label="Toggle language">
+                        <span data-lang="sv">🇸🇪 SV</span>
+                        <span data-lang="en" style="display:none;">🇬🇧 EN</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>
+                <span data-lang-sv>Kontakta Oss</span>
+                <span data-lang-en style="display:none;">Contact Us</span>
+            </h1>
+            <p>
+                <span data-lang-sv>Vi ser fram emot att höra från dig</span>
+                <span data-lang-en style="display:none;">We look forward to hearing from you</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>
+                        <span data-lang-sv>Kontaktinformation</span>
+                        <span data-lang-en style="display:none;">Contact Information</span>
+                    </h2>
+                    <p data-lang-sv>
+                        För partnerskap, mediaförfrågningar eller allmänna frågor, vänligen kontakta:
+                    </p>
+                    <p data-lang-en style="display:none;">
+                        For partnerships, media inquiries or general questions, please contact:
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">👤</div>
+                            <div class="contact-text">
+                                <h3>Johan Jonsson</h3>
+                                <p data-lang-sv>Manager & Kontaktperson</p>
+                                <p data-lang-en style="display:none;">Manager & Contact Person</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-text">
+                                <h3 data-lang-sv>Telefon</h3>
+                                <h3 data-lang-en style="display:none;">Phone</h3>
+                                <p><a href="tel:+5511999260051">+55 11 99926-0051</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p><a href="mailto:oi@johan.com.br">oi@johan.com.br</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h3 data-lang-sv>Plats</h3>
+                                <h3 data-lang-en style="display:none;">Location</h3>
+                                <p>Rio de Janeiro (Ipanema)<br>Brasilien</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-cta">
+                        <h3>
+                            <span data-lang-sv>Intresserad av Partnerskap?</span>
+                            <span data-lang-en style="display:none;">Interested in Partnership?</span>
+                        </h3>
+                        <a href="/assets/docs/Perfil – Julia Jonsson.txt" download class="btn btn-primary">
+                            📄 <span data-lang-sv>Ladda Ner Media Kit</span><span data-lang-en style="display:none;">Download Media Kit</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h2>
+                        <span data-lang-sv>Skicka Ett Meddelande</span>
+                        <span data-lang-en style="display:none;">Send a Message</span>
+                    </h2>
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">
+                                <span data-lang-sv>Namn</span>
+                                <span data-lang-en style="display:none;">Name</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" id="name" name="name" required aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                Email <span class="required">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" required aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">
+                                <span data-lang-sv>Telefon</span>
+                                <span data-lang-en style="display:none;">Phone</span>
+                            </label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">
+                                <span data-lang-sv>Ämne</span>
+                                <span data-lang-en style="display:none;">Subject</span>
+                                <span class="required">*</span>
+                            </label>
+                            <select id="subject" name="subject" required aria-required="true">
+                                <option value="" data-lang-sv>Välj ämne...</option>
+                                <option value="" data-lang-en style="display:none;">Select subject...</option>
+                                <option value="partnership" data-lang-sv>Partnerskap/Sponsring</option>
+                                <option value="partnership" data-lang-en style="display:none;">Partnership/Sponsorship</option>
+                                <option value="media" data-lang-sv>Mediaförfrågan</option>
+                                <option value="media" data-lang-en style="display:none;">Media Inquiry</option>
+                                <option value="general" data-lang-sv>Allmän Fråga</option>
+                                <option value="general" data-lang-en style="display:none;">General Question</option>
+                                <option value="other" data-lang-sv>Övrigt</option>
+                                <option value="other" data-lang-en style="display:none;">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">
+                                <span data-lang-sv>Meddelande</span>
+                                <span data-lang-en style="display:none;">Message</span>
+                                <span class="required">*</span>
+                            </label>
+                            <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span data-lang-sv>Skicka Meddelande</span>
+                            <span data-lang-en style="display:none;">Send Message</span>
+                        </button>
+
+                        <p class="form-note" data-lang-sv>
+                            <small>* Obligatoriska fält</small>
+                        </p>
+                        <p class="form-note" data-lang-en style="display:none;">
+                            <small>* Required fields</small>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span data-lang-sv>Vanliga Frågor</span>
+                <span data-lang-en style="display:none;">Frequently Asked Questions</span>
+            </h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 data-lang-sv>Hur kan jag bli partner?</h3>
+                    <h3 data-lang-en style="display:none;">How can I become a partner?</h3>
+                    <p data-lang-sv>
+                        Kontakta oss via telefon eller email för att diskutera partnerskapsmöjligheter. 
+                        Vi tar gärna fram ett skräddarsytt förslag baserat på dina behov.
+                    </p>
+                    <p data-lang-en style="display:none;">
+                        Contact us by phone or email to discuss partnership opportunities. 
+                        We are happy to create a tailored proposal based on your needs.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 data-lang-sv>Deltar Julia i internationella turneringar?</h3>
+                    <h3 data-lang-en style="display:none;">Does Julia participate in international tournaments?</h3>
+                    <p data-lang-sv>
+                        Ja, Julia har redan tävlat internationellt i Argentina och planerar att utöka sitt 
+                        internationella tävlande med rätt partnerstöd.
+                    </p>
+                    <p data-lang-en style="display:none;">
+                        Yes, Julia has already competed internationally in Argentina and plans to expand her 
+                        international competition with the right partner support.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 data-lang-sv>Var tränar Julia för närvarande?</h3>
+                    <h3 data-lang-en style="display:none;">Where is Julia currently training?</h3>
+                    <p data-lang-sv>
+                        Julia tränar för närvarande på Yes Tennis i Rio de Janeiro, samma akademi som 
+                        Brasiliens nuvarande #1 junior João Fonseca.
+                    </p>
+                    <p data-lang-en style="display:none;">
+                        Julia is currently training at Yes Tennis in Rio de Janeiro, the same academy as 
+                        Brazil's current #1 junior João Fonseca.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 data-lang-sv>Finns det mer material tillgängligt?</h3>
+                    <h3 data-lang-en style="display:none;">Is there more material available?</h3>
+                    <p data-lang-sv>
+                        Ja, ladda ner vårt media kit för detaljerad information, eller besök vårt kompletta 
+                        bildgalleri för fler foton och videos.
+                    </p>
+                    <p data-lang-en style="display:none;">
+                        Yes, download our media kit for detailed information, or visit our complete 
+                        photo gallery for more photos and videos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Julia Jonsson</h3>
+                    <p data-lang-sv>Brasiliansk tennismästare från Rio de Janeiro</p>
+                    <p data-lang-en style="display:none;">Brazilian tennis champion from Rio de Janeiro</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-sv>Navigation</h4>
+                    <h4 data-lang-en style="display:none;">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="/" data-lang-sv>Hem</a><a href="/" data-lang-en style="display:none;">Home</a></li>
+                        <li><a href="/about" data-lang-sv>Om Julia</a><a href="/about" data-lang-en style="display:none;">About</a></li>
+                        <li><a href="/achievements" data-lang-sv>Meriter</a><a href="/achievements" data-lang-en style="display:none;">Achievements</a></li>
+                        <li><a href="/partners" data-lang-sv>Partnerskap</a><a href="/partners" data-lang-en style="display:none;">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-sv>Kontakt</h4>
+                    <h4 data-lang-en style="display:none;">Contact</h4>
+                    <p>Johan Jonsson<br>
+                    Tel: +55 11 99926-0051<br>
+                    Email: oi@johan.com.br</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Julia Jonsson. <span data-lang-sv>Alla rättigheter förbehållna.</span><span data-lang-en style="display:none;">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildgalleri | Julia Jonsson</title>
+    <meta name="description" content="Utforska bilder från Julias tennisresa - från hennes första steg på banan till nationella mästerskap.">
+    <meta property="og:title" content="Julias Bildgalleri">
+    <meta property="og:description" content="Bilder från en exceptionell tennisresa">
+    <meta property="og:image" content="/assets/images/heroJulia.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/" class="logo">Julia Jonsson</a>
+                <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link" data-lang-sv="Hem" data-lang-en="Home">Hem</a></li>
+                <li><a href="/about" class="nav-link" data-lang-sv="Om Julia" data-lang-en="About">Om Julia</a></li>
+                <li><a href="/achievements" class="nav-link" data-lang-sv="Meriter" data-lang-en="Achievements">Meriter</a></li>
+                <li><a href="/partners" class="nav-link" data-lang-sv="Partnerskap" data-lang-en="Partners">Partnerskap</a></li>
+                <li><a href="/gallery" class="nav-link active" data-lang-sv="Galleri" data-lang-en="Gallery">Galleri</a></li>
+                <li><a href="/contact" class="nav-link" data-lang-sv="Kontakt" data-lang-en="Contact">Kontakt</a></li>
+                <li class="lang-toggle">
+                    <button id="langToggle" aria-label="Toggle language">
+                        <span data-lang="sv">🇸🇪 SV</span>
+                        <span data-lang="en" style="display:none;">🇬🇧 EN</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>
+                <span data-lang-sv>Bildgalleri</span>
+                <span data-lang-en style="display:none;">Photo Gallery</span>
+            </h1>
+            <p>
+                <span data-lang-sv>Minnen från en exceptionell tennisresa</span>
+                <span data-lang-en style="display:none;">Memories from an exceptional tennis journey</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="gallery-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <span data-lang-sv>Alla</span>
+                    <span data-lang-en style="display:none;">All</span>
+                </button>
+                <button class="filter-btn" data-filter="trophies">
+                    <span data-lang-sv>Troféer</span>
+                    <span data-lang-en style="display:none;">Trophies</span>
+                </button>
+                <button class="filter-btn" data-filter="action">
+                    <span data-lang-sv>I Aktion</span>
+                    <span data-lang-en style="display:none;">In Action</span>
+                </button>
+                <button class="filter-btn" data-filter="tournaments">
+                    <span data-lang-sv>Turneringar</span>
+                    <span data-lang-en style="display:none;">Tournaments</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Hero Images -->
+                <div class="gallery-item" data-category="action">
+                    <img src="/assets/images/heroJulia.png" alt="Julia Jonsson på tennisbanan" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-lang-sv>Julia på Banan</h3>
+                        <h3 data-lang-en style="display:none;">Julia on Court</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="action">
+                    <img src="/assets/images/Hero2.png" alt="Julia Jonsson i aktion" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-lang-sv>I Aktion</h3>
+                        <h3 data-lang-en style="display:none;">In Action</h3>
+                    </div>
+                </div>
+
+                <!-- Early Years -->
+                <div class="gallery-item" data-category="tournaments">
+                    <img src="/assets/images/Julia 4 anos.png" alt="Julia vid 4 års ålder" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-lang-sv>Början - 4 År</h3>
+                        <h3 data-lang-en style="display:none;">The Beginning - 4 Years</h3>
+                    </div>
+                </div>
+
+                <!-- Trophies -->
+                <div class="gallery-item" data-category="trophies">
+                    <img src="/assets/images/Premie CBT Rio 2025.png" alt="Nationellt mästerskap CBT 2025" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-lang-sv>CBT Nationell Mästare 2025</h3>
+                        <h3 data-lang-en style="display:none;">CBT National Champion 2025</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="trophies">
+                    <img src="/assets/images/buenos aires premie.png" alt="Buenos Aires mästerskap" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-lang-sv>Buenos Aires Mästare</h3>
+                        <h3 data-lang-en style="display:none;">Buenos Aires Champion</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="trophies">
+                    <img src="/assets/images/julia primeiro premie.png" alt="Första trofén" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-lang-sv>Första Trofén</h3>
+                        <h3 data-lang-en style="display:none;">First Trophy</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="trophies">
+                    <img src="/assets/images/Premie 10 anos federacao paulista.png" alt="Federação Paulista 10 år" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-lang-sv>Federação Paulista - 10 År</h3>
+                        <h3 data-lang-en style="display:none;">Federação Paulista - 10 Years</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="trophies">
+                    <img src="/assets/images/Primeiro premie federacao paulista (2).png" alt="Federação Paulista trofé" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-lang-sv>Federação Paulista</h3>
+                        <h3 data-lang-en style="display:none;">Federação Paulista</h3>
+                    </div>
+                </div>
+
+                <!-- Tournaments -->
+                <div class="gallery-item" data-category="tournaments">
+                    <img src="/assets/images/convocacao copa das federacoes 2025.png" alt="Copa das Federações kallelse 2025" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-lang-sv>Copa das Federações 2025</h3>
+                        <h3 data-lang-en style="display:none;">Copa das Federações 2025</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="action tournaments">
+                    <img src="/assets/images/buenos aires centre court.png" alt="Buenos Aires centre court" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-lang-sv>Buenos Aires Centre Court</h3>
+                        <h3 data-lang-en style="display:none;">Buenos Aires Centre Court</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="tournaments">
+                    <img src="/assets/images/Skärmbild 2025-10-03 150818.png" alt="Turnering 2025" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-lang-sv>Turnering 2025</h3>
+                        <h3 data-lang-en style="display:none;">Tournament 2025</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- External Gallery Link -->
+    <section class="external-gallery">
+        <div class="container">
+            <div class="external-gallery-card">
+                <h2>
+                    <span data-lang-sv>Fler Bilder</span>
+                    <span data-lang-en style="display:none;">More Photos</span>
+                </h2>
+                <p data-lang-sv>
+                    Se fler bilder från Julias tennisresa i vårt kompletta Google Photos-album.
+                </p>
+                <p data-lang-en style="display:none;">
+                    See more photos from Julia's tennis journey in our complete Google Photos album.
+                </p>
+                <a href="https://photos.app.goo.gl/vDNFXU3UXCRogNf26" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <span data-lang-sv>Besök Fullständigt Galleri</span>
+                    <span data-lang-en style="display:none;">Visit Full Gallery</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Julia Jonsson</h3>
+                    <p data-lang-sv>Brasiliansk tennismästare från Rio de Janeiro</p>
+                    <p data-lang-en style="display:none;">Brazilian tennis champion from Rio de Janeiro</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-sv>Navigation</h4>
+                    <h4 data-lang-en style="display:none;">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="/" data-lang-sv>Hem</a><a href="/" data-lang-en style="display:none;">Home</a></li>
+                        <li><a href="/about" data-lang-sv>Om Julia</a><a href="/about" data-lang-en style="display:none;">About</a></li>
+                        <li><a href="/achievements" data-lang-sv>Meriter</a><a href="/achievements" data-lang-en style="display:none;">Achievements</a></li>
+                        <li><a href="/partners" data-lang-sv>Partnerskap</a><a href="/partners" data-lang-en style="display:none;">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-sv>Kontakt</h4>
+                    <h4 data-lang-en style="display:none;">Contact</h4>
+                    <p>Johan Jonsson<br>
+                    Tel: +55 11 99926-0051<br>
+                    Email: oi@johan.com.br</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Julia Jonsson. <span data-lang-sv>Alla rättigheter förbehållna.</span><span data-lang-en style="display:none;">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
