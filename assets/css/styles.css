@@ -216,18 +216,20 @@ p {
    ================================ */
 .navbar {
     background-color: var(--white);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid rgba(0, 102, 204, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
 }
 
 .nav-brand {
@@ -239,14 +241,21 @@ p {
 
 .logo {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 800;
     color: var(--dark);
     text-decoration: none;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a5f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all var(--transition-fast);
 }
 
 .logo:hover {
-    color: var(--primary-color);
+    transform: translateY(-1px);
+    filter: brightness(1.1);
 }
 
 .mobile-toggle {
@@ -278,13 +287,34 @@ p {
     font-weight: 500;
     padding: 0.5rem 0;
     position: relative;
-    transition: color var(--transition-fast);
+    transition: all var(--transition-fast);
     white-space: nowrap;
 }
 
-.nav-link:hover,
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), #1e3a5f);
+    transition: width var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
 .nav-link.active {
     color: var(--primary-color);
+    font-weight: 600;
 }
 
 .nav-link.active::after {
