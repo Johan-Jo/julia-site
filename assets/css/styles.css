@@ -279,6 +279,7 @@ p {
     padding: 0.5rem 0;
     position: relative;
     transition: color var(--transition-fast);
+    white-space: nowrap;
 }
 
 .nav-link:hover,
