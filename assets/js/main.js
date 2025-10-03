@@ -181,19 +181,27 @@
     });
 
     // ================================
-    // Contact Form Enhancement
+    // Contact Form Handler with Resend
     // ================================
     const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
+    const errorText = document.getElementById('errorText');
     
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            // Basic client-side validation
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form data
             const name = document.getElementById('name');
             const email = document.getElementById('email');
             const subject = document.getElementById('subject');
             const message = document.getElementById('message');
             
-            let isValid = true;
+            // Hide previous messages
+            if (formSuccess) formSuccess.style.display = 'none';
+            if (formError) formError.style.display = 'none';
             
             // Clear previous error states
             [name, email, subject, message].forEach(field => {
@@ -203,31 +211,99 @@
             });
             
             // Validate required fields
+            let isValid = true;
+            
             if (!name?.value.trim()) {
-                name.style.borderColor = 'var(--danger)';
+                name.style.borderColor = '#dc3545';
                 isValid = false;
             }
             
             if (!email?.value.trim() || !isValidEmail(email.value)) {
-                email.style.borderColor = 'var(--danger)';
+                email.style.borderColor = '#dc3545';
                 isValid = false;
             }
             
             if (!subject?.value) {
-                subject.style.borderColor = 'var(--danger)';
+                subject.style.borderColor = '#dc3545';
                 isValid = false;
             }
             
             if (!message?.value.trim()) {
-                message.style.borderColor = 'var(--danger)';
+                message.style.borderColor = '#dc3545';
                 isValid = false;
             }
             
             if (!isValid) {
-                e.preventDefault();
-                alert(currentLang === 'sv' 
-                    ? 'Vänligen fyll i alla obligatoriska fält korrekt.' 
-                    : 'Please fill in all required fields correctly.');
+                if (formError && errorText) {
+                    errorText.textContent = 'Por favor, preencha todos os campos obrigatórios corretamente.';
+                    formError.style.display = 'block';
+                }
+                return;
+            }
+            
+            // Disable submit button and show loading state
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+            }
+            
+            try {
+                // Send form data to API
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: name.value.trim(),
+                        email: email.value.trim(),
+                        subject: subject.value,
+                        message: message.value.trim(),
+                    }),
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // Success!
+                    if (formSuccess) {
+                        formSuccess.style.display = 'block';
+                        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Re-enable button after 3 seconds
+                    setTimeout(() => {
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Enviar Mensagem';
+                        }
+                        if (formSuccess) {
+                            formSuccess.style.display = 'none';
+                        }
+                    }, 5000);
+                    
+                } else {
+                    // Error from server
+                    throw new Error(data.error || 'Erro ao enviar mensagem');
+                }
+                
+            } catch (error) {
+                console.error('Form submission error:', error);
+                
+                if (formError && errorText) {
+                    errorText.textContent = error.message || 'Algo deu errado. Por favor, tente novamente.';
+                    formError.style.display = 'block';
+                    formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+                
+                // Re-enable button
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Enviar Mensagem';
+                }
             }
         });
     }

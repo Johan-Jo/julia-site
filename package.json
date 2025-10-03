@@ -1,0 +1,10 @@
+{
+  "name": "julia-site",
+  "version": "1.0.0",
+  "description": "Site oficial de Julia Jonsson - Tenista profissional",
+  "type": "module",
+  "dependencies": {
+    "resend": "^4.0.0"
+  }
+}
+
