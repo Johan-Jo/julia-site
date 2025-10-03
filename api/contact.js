@@ -38,7 +38,7 @@ export default async function handler(req, res) {
     // Enviar email via Resend
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: 'oi@johan.com.br',
+      to: 'hej@johan.com.br',
       subject: `[Julia Site] ${subject}`,
       html: `
         <!DOCTYPE html>
