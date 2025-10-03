@@ -382,7 +382,7 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 15%;
 }
 
 @media (min-width: 768px) {
@@ -396,6 +396,13 @@ p {
     z-index: 1;
     width: 100%;
     padding: var(--spacing-xl) 0;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .hero-content {
+        margin-top: 0;
+    }
 }
 
 .hero-title {
